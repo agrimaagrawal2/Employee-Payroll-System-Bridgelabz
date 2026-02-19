@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h2>Edit Employee</h2>
+
+    <form action="/edit/<%= employee.id %>" method="POST">
+
+        <input type="text" 
+               name="Name" 
+               value="<%= employee.name %>" 
+               placeholder="Name"
+               required>
+
+        <input type="text" 
+               name="Gender" 
+               value="<%= employee.gender %>" 
+               placeholder="Gender"
+               required>
+
+        <input type="text" 
+               name="department" 
+               value="<%= employee.department %>" 
+               placeholder="Department"
+               required>
+
+        <input type="number" 
+               name="Salary" 
+               value="<%= employee.salary %>" 
+               placeholder="Salary"
+               required>
+
+        <input type="date" 
+               name="startDate" 
+               value="<%= employee.startDate %>" 
+               required>
+
+        <button type="submit">Update Employee</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
+
