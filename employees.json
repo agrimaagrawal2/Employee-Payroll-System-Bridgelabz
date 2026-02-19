@@ -1,0 +1,106 @@
+[
+  {
+    "id": "2344",
+    "name": "John",
+    "gender": "Male",
+    "department": "IT",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "232445645",
+    "name": "Tin",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "1234567",
+    "name": "abc",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "654657567",
+    "name": "pqr",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "675765765",
+    "name": "mnp",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "65675",
+    "name": "Tin",
+    "gender": "Female",
+    "department": "SDE",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "6576576",
+    "name": "Tomy",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "65765765",
+    "name": "Tomy",
+    "gender": "Female",
+    "department": "HR",
+    "salary": 30000,
+    "startDate": "2026-02-18"
+  },
+  {
+    "id": "1771495732173",
+    "name": "abc",
+    "gender": "male",
+    "department": "finance",
+    "salary": 70000,
+    "startDate": "2026-02-27"
+  },
+  {
+    "id": "1771495940452",
+    "name": "abc",
+    "gender": "male",
+    "department": "finance",
+    "salary": 50000,
+    "startDate": "2026-02-21"
+  },
+  {
+    "id": "1771496124575",
+    "name": "abc",
+    "gender": "female",
+    "department": "HR",
+    "salary": 70000,
+    "startDate": "2026-02-15"
+  },
+  {
+    "id": "1771496124575",
+    "name": "abc",
+    "gender": "male",
+    "department": "HR",
+    "salary": 70000,
+    "startDate": "2026-02-15"
+  },
+  {
+    "id": "1771511292586",
+    "name": "pqr",
+    "gender": "male",
+    "department": "SDE",
+    "salary": 800000,
+    "startDate": "2026-03-05"
+  }
+]
