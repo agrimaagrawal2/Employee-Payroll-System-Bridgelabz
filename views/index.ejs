@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <h2>Employee Details</h2>
+
+        <div class="top-actions">
+           <form method="GET" action="/" style="display:inline;">
+    <input type="text" name="search" id="searchInput" 
+           style="display:none;">
+    <button type="button" class="search-btn" onclick="handleSearch()">
+        <i class="fa fa-search"></i>
+    </button>
+</form>
+
+
+            <a href="/add" class="btn-add">
+                <i class="fa fa-user-plus"></i> Add User
+            </a>
+        </div>
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="cards">
+
+        <div class="card">
+            <i class="fa fa-users card-icon"></i>
+            <h4>Total Employees</h4>
+            <h3 id="totalEmployees">0</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-building card-icon"></i>
+            <h4>Departments</h4>
+            <h3 id="departments">0</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-sack-dollar card-icon"></i>
+            <h4>Total Basic Salary</h4>
+            <h3 id="totalBasicSalary">₹0</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-file-invoice-dollar card-icon"></i>
+            <h4>Total Tax (12%)</h4>
+            <h3 id="totalTax">₹0</h3>
+        </div>
+
+        <div class="card highlight">
+            <i class="fa fa-money-bill-wave card-icon"></i>
+            <h4>Total Net Salary</h4>
+            <h3 id="totalNetSalary">₹0</h3>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-chart-line card-icon"></i>
+            <h4>Average Salary</h4>
+            <h3 id="avgSalary">₹0</h3>
+        </div>
+
+    </div>
+
+    <!-- TABLE SECTION -->
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>DEPARTMENT</th>
+                    <th>SALARY</th>
+                    <th>START DATE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employees.forEach(emp => { %>
+                    <tr>
+                        <td><%= emp.name %></td>
+                        <td><%= emp.gender %></td>
+                        <td>
+                            <span class="badge"><%= emp.department %></span>
+                        </td>
+                        <td>₹<%= emp.salary %></td>
+                        <td><%= emp.startDate %></td>
+                        <td>
+                            <a href="/edit/<%= emp.id %>" class="icon-btn edit">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                            <a href="/delete/<%= emp.id %>" class="icon-btn delete">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+async function loadDashboardData() {
+    const res = await fetch('/dashboard-data');
+    const data = await res.json();
+
+    document.getElementById('totalEmployees').innerText = data.totalEmployees;
+    document.getElementById('departments').innerText = data.departments;
+    document.getElementById('totalBasicSalary').innerText = "₹" + data.totalBasicSalary.toFixed(2);
+    document.getElementById('totalTax').innerText = "₹" + data.totalTax.toFixed(2);
+    document.getElementById('totalNetSalary').innerText = "₹" + data.totalNetSalary.toFixed(2);
+    document.getElementById('avgSalary').innerText = "₹" + data.avgSalary.toFixed(2);
+}
+
+loadDashboardData();
+
+
+function handleSearch() {
+    const value = prompt("Search by Name, Department or Gender:");
+
+    if (value !== null && value.trim() !== "") {
+        window.location.href = "/?search=" + encodeURIComponent(value);
+    }
+}
+</script>
+
+</body>
+</html>
